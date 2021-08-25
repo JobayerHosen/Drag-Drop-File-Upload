@@ -22,6 +22,38 @@ body {
     border: 3px dashed #34d399;
     box-shadow: 0 0 1000px 1200px #00000050
 }
+
+
+/* STYLE FOR FILE ITEM IN UPLOADED  */
+.file {
+  display: flex;
+  padding: 2rem;
+  box-shadow: 0 4px 6px -1px #0000001a, 0 2px 4px -1px #0000000f;
+  border: 1px solid #cfcfcf7e;
+  border-radius: 7px;
+  margin-bottom: 1.5rem;
+  flex: 1 1 0%;
+}
+.file .far {
+  font-size: 3rem;
+  color: rgba(177, 65, 221, 0.994);
+  padding-right: 2rem;
+}
+.file-info {
+  width: calc(100% - 4rem);
+}
+.file-name {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #838383ea;
+  padding-right: 1rem;
+}
+.file-status {
+  text-align: right;
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #34d399;
+}
 progress {
     width: 100%;
     height: 0.5rem;
