@@ -5,60 +5,56 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>File Upload</title>
-        <link
-            href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
-            rel="stylesheet"
-        />
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="css/style.css" />
         <script src="https://kit.fontawesome.com/29da448643.js" crossorigin="anonymous"></script>
     </head>
     <body class="bg-green-100 w-screen h-screen">
-
         <div class="file-upload bg-white mx-auto mt-12 rounded-lg p-8">
-
             <h1 class="text-5xl font-bold text-green-500 mb-6">Upload Files</h1>
-            <h4 class="text-2xl text-gray-400 mb-8">
-                Upload Files you want to share width your team.
-            </h4>
+            <h4 class="text-2xl text-gray-400 mb-8">Upload Files you want to share width your team.</h4>
 
             <div class="upload flex h-auto space-x-8">
-
-
                 <!-- DROP ZONE  -->
-                <div
-                    class="
-                        drop-zone
-                        border-dashed border-2 border-green-300
-                        flex
-                        justify-center
-                        items-center
-                    "
-                >
-                    <div class="drop-zone-content flex flex-col justify-center items-center">
-                        <i style="font-size: 8rem;" class="fas fa-cloud-upload-alt text-gray-300 text-center mb-4"></i>
-                        <h4 class="text-2xl font-semibold text-center text-green-400 mb-4">
-                            Drag and Drop Files here <br />
-                            -OR-
-                        </h4>
-                        <label for="files-input" class="bg-green-400 inline-block py-3 px-8  rounded-lg text-white text-center font font-bold text-2xl">Browse Files</label>
-                        <input type="file" name="files" id="files-input" accept="images/*" multiple hidden>
+                <form action="">
+                    <div class="drop-zone flex justify-center items-center" id="drop-zone">
+                        <div class="drop-zone-content flex flex-col justify-center items-center">
+                            <i style="font-size: 8rem" class="fas fa-cloud-upload-alt text-gray-300 text-center mb-4"></i>
+                            <h4 class="text-2xl font-semibold text-center text-green-400 mb-4">
+                                Drag and Drop Files here <br />
+                                -OR-
+                            </h4>
+                            <label
+                                for="files-input"
+                                class="
+                                    bg-green-400
+                                    inline-block
+                                    py-3
+                                    px-8
+                                    rounded-lg
+                                    text-white text-center
+                                    font font-bold
+                                    text-2xl
+                                "
+                                >Browse Files</label
+                            >
+                            <input type="file" name="files" id="files-input" accept="images/*" multiple hidden />
+                        </div>
                     </div>
-                </div>
-
+                </form>
 
                 <!-- UPLOADED FILES -->
                 <div class="uploaded-files-section">
                     <h2 class="text-4xl font-bold mb-6">Uploaded Files</h2>
-                    <div class="uplaoded-files flex flex-col">
-
+                    <div class="uplaoded-files flex flex-col" id="files">
                         <div class="file flex flex-1 p-8 shadow border border-1 border-gray-100 rounded mb-3">
                             <i class="far fa-file-image text-5xl text-blue-400 pr-8"></i>
                             <div class="file-info w-full">
                                 <div class="flex justify-between">
                                     <p class="file-name text-md font-bold text-gray-400">Profile-pic.png</p>
-                                    <p class="file-status text-right text-lg font-bold text-green-300 ">Conpleted</p>
+                                    <p class="file-status text-right text-lg font-bold text-green-300">Conpleted</p>
                                 </div>
-                                <progress id="file-progress" value="100" max="100"> 100% </progress>
+                                <progress id="file-progress" value="100" max="100">100%</progress>
                             </div>
                         </div>
 
@@ -67,9 +63,9 @@
                             <div class="file-info w-full">
                                 <div class="flex justify-between">
                                     <p class="file-name text-lg font-bold text-gray-400">Profile-pic.png</p>
-                                    <p class="file-status text-right text-lg font-bold text-red-300 ">Cancel</p>
+                                    <p class="file-status text-right text-lg font-bold text-red-300">Cancel</p>
                                 </div>
-                                <progress id="file-progress" value="65" max="100"> 65% </progress>
+                                <progress id="file-progress" value="65" max="100">65%</progress>
                             </div>
                         </div>
 
@@ -78,16 +74,16 @@
                             <div class="file-info w-full">
                                 <div class="flex justify-between">
                                     <p class="file-name text-lg font-bold text-gray-400">Profile-pic.png</p>
-                                    <p class="file-status text-right text-lg font-bold text-red-300 ">Cancel</p>
+                                    <p class="file-status text-right text-lg font-bold text-red-300">Cancel</p>
                                 </div>
-                                <progress id="file-progress" value="32" max="100"> 32% </progress>
+                                <progress id="file-progress" value="32" max="100">32%</progress>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
+
+        <script src="js/script.js"></script>
     </body>
 </html>
