@@ -9,15 +9,15 @@
         <link rel="stylesheet" href="css/style.css" />
         <script src="https://kit.fontawesome.com/29da448643.js" crossorigin="anonymous"></script>
     </head>
-    <body class="bg-green-100 w-screen h-screen">
-        <div class="file-upload bg-white mx-auto mt-12 rounded-lg p-8">
+    <body class="bg-green-50">
+        <div class="file-upload bg-white mx-auto mt-12 rounded-lg p-8 shadow-lg">
             <h1 class="text-5xl font-bold text-green-500 mb-6">Upload Files</h1>
             <h4 class="text-2xl text-gray-400 mb-8">Upload Files you want to share width your team.</h4>
 
-            <div class="upload flex h-auto space-x-8">
+            <div class="upload flex flex-col items-center md:flex-row md:items-start h-auto space-x-8">
                 <!-- DROP ZONE  -->
                 <form action="">
-                    <div class="drop-zone flex justify-center items-center" id="drop-zone">
+                    <div class="drop-zone flex justify-center items-center mb-8" id="drop-zone">
                         <div class="drop-zone-content flex flex-col justify-center items-center">
                             <i style="font-size: 8rem" class="fas fa-cloud-upload-alt text-gray-300 text-center mb-4"></i>
                             <h4 class="text-2xl font-semibold text-center text-green-400 mb-4">
@@ -44,7 +44,7 @@
                 </form>
 
                 <!-- UPLOADED FILES -->
-                <div class="uploaded-files-section">
+                <div class="uploaded-files-section overflow-y-auto">
                     <h2 class="text-4xl font-bold mb-6">Uploaded Files</h2>
                     <div class="uplaoded-files flex flex-col" id="files">
                         <div class="file flex flex-1 p-8 shadow border border-1 border-gray-100 rounded mb-3">
