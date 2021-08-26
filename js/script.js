@@ -15,6 +15,10 @@ const dropHandler = function (event) {
     handleFiles(fileList);
 };
 
+const browseHandler = function () {
+    handleFiles(fileInputField.files);
+};
+
 const handleFiles = function (fileList) {
     const files = [...fileList];
     files.forEach((file) => {
@@ -22,53 +26,28 @@ const handleFiles = function (fileList) {
     });
 };
 
+
+
 // CREATE FILE ITEM ELEMENT TO ADD TO UPLOADED FILE SECTION
 const createFileElement = function (file) {
     //FILE ELEMENT
     let fileElement = document.createElement("div");
     fileElement.className = "file";
+    fileElement.setAttribute("id", file.name);
 
-    //ICON INSILE FILE ELEMENT
-    let icon = document.createElement("i");
-    icon.className = "far fa-file-image";
-
-    //FILE INFO ELEMENT
-    let fileInfo = document.createElement("div");
-    fileInfo.className = "file-info";
-
-    //NAME , SIZE STATUS INFO INSIDE FILE INFO
-    let fileTextInfo = document.createElement("div");
-    fileTextInfo.className = "flex justify-between";
-
-    let fileName = document.createElement("p");
-    fileName.className = "file-name truncate";
-
-    let fileSizeElement = document.createElement("span");
-    fileSizeElement.setAttribute("id", "file-size");
-    fileSizeElement.innerText = calculateFileSize(file.size);
-
-    fileName.appendChild(fileSizeElement);
-    fileName.append(file.name);
-
-    let fileStatus = document.createElement("p");
-    fileStatus.className = "file-status";
-    fileStatus.innerText = "Uploading";
-
-    fileTextInfo.appendChild(fileName);
-    fileTextInfo.appendChild(fileStatus);
-
-    //PROGRESS BAR ELEMENT
-    let progress = document.createElement("progress");
-    progress.setAttribute("id", "file-progress");
-    progress.setAttribute("max", "100");
-    progress.setAttribute("value", "45");
-    progress.innerText = "45%";
-
-    fileInfo.appendChild(fileTextInfo);
-    fileInfo.appendChild(progress);
-
-    fileElement.appendChild(icon);
-    fileElement.appendChild(fileInfo);
+    console.log(file);
+    fileElement.innerHTML = `
+    <div class="thumb">
+        <i class="far fa-file-image" aria-hidden="true"></i>
+    </div>
+    <div class="file-info">
+        <div class="flex justify-between">
+            <p class="file-name truncate"><span>${calculateFileSize(file.size)}</span> ${file.name} </p>
+            <p class="file-status">Uploading</p>
+        </div>
+        <progress id="file-progress" value="1" max="100">65%</progress>
+    </div>
+    `;
 
     uploadedFiles.appendChild(fileElement);
 };
@@ -101,6 +80,4 @@ dropZone.addEventListener("drop", unHighlight);
 
 dropZone.addEventListener("drop", dropHandler);
 
-fileInputField.addEventListener("change", () => {
-    handleFiles(fileInputField.files);
-});
+fileInputField.addEventListener("change", browseHandler);

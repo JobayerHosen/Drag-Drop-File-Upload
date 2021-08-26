@@ -1,21 +1,21 @@
-body {
-  width: 100vw;
+* {
+  box-sizing: border-box;
 }
 .file-upload {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1000px;
     height: auto;
 }
 .drop-zone {
-    width: 400px;
-    height: 400px;
+    width: 24rem;
+    height: 24rem;
     border: 2px dashed #508a75;
     transition: all .15s linear;
 }
 
 .uploaded-files-section {
-  width: calc(100% - 430px);
-  height: 550px;
+  width: calc(100% - 24rem);
+  height: 30rem;
 }
 
 .highlight {
@@ -27,30 +27,36 @@ body {
 /* STYLE FOR FILE ITEM IN UPLOADED  */
 .file {
   display: flex;
-  padding: 2rem;
+  padding: 1rem;
   box-shadow: 0 4px 6px -1px #0000001a, 0 2px 4px -1px #0000000f;
   border: 1px solid #cfcfcf7e;
   border-radius: 7px;
   margin-bottom: 1.5rem;
   flex: 1 1 0%;
 }
+.file .thumb {
+  width: 3rem;
+  height: 3rem;
+  padding-right: 1rem;
+}
 .file .far {
+  text-align: center;
   font-size: 3rem;
   color: rgba(177, 65, 221, 0.994);
-  padding-right: 2rem;
+  max-width: 3rem;
 }
 .file-info {
-  width: calc(100% - 4rem);
+  width: calc(100% - 3rem);
 }
 .file-name {
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: bold;
   color: #838383ea;
   padding-right: 1rem;
 }
 .file-status {
   text-align: right;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: bold;
   color: #34d399;
 }
@@ -74,7 +80,12 @@ progress::-moz-progress-bar {
 
 
 @media (max-width: 768px) {
+  .drop-zone {
+    width: 18rem;
+    height: 18rem;
+  }
   .uploaded-files-section {
-    width: 80%;
+    min-width: 18rem;
+    width: 90%;
   }
 }

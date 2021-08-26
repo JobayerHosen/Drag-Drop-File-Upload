@@ -10,55 +10,49 @@
         <script src="https://kit.fontawesome.com/29da448643.js" crossorigin="anonymous"></script>
     </head>
     <body class="bg-green-50">
-        <div class="file-upload bg-white mx-auto mt-12 rounded-lg p-8 shadow-lg">
-            <h1 class="text-5xl font-bold text-green-500 mb-6">Upload Files</h1>
-            <h4 class="text-2xl text-gray-400 mb-8">Upload Files you want to share width your team.</h4>
+        <div class="file-upload bg-white mx-auto md:mt-12 rounded-lg p-2 md:p-6 shadow-lg">
+            <h1 class="text-4xl md:text-5xl font-bold text-green-500 mb-6">Upload Files</h1>
+            <h4 class="text-lg md:text-2xl text-gray-400 mb-8">Upload Files you want to share width your team.</h4>
 
-            <div class="upload flex flex-col items-center md:flex-row md:items-start h-auto space-x-8">
+            <div class="upload flex flex-col items-center md:flex-row md:items-start h-auto md:space-x-8">
                 <!-- DROP ZONE  -->
-                <form action="">
-                    <div class="drop-zone flex justify-center items-center mb-8" id="drop-zone">
-                        <div class="drop-zone-content flex flex-col justify-center items-center">
-                            <i style="font-size: 8rem" class="fas fa-cloud-upload-alt text-gray-300 text-center mb-4"></i>
-                            <h4 class="text-2xl font-semibold text-center text-green-400 mb-4">
-                                Drag and Drop Files here <br />
-                                -OR-
-                            </h4>
-                            <label
-                                for="files-input"
-                                class="
-                                    bg-green-400
-                                    inline-block
-                                    py-3
-                                    px-8
-                                    rounded-lg
-                                    text-white text-center
-                                    font font-bold
-                                    text-2xl
-                                "
-                                >Browse Files</label
-                            >
-                            <input type="file" name="files" id="files-input" accept="images/*" multiple hidden />
-                        </div>
+
+                <div class="drop-zone flex justify-center items-center mb-8" id="drop-zone">
+                    <div class="drop-zone-content flex flex-col justify-center items-center">
+                        <i
+                            style="font-size: 4rem"
+                            class="fas fa-cloud-upload-alt text-gray-300 text-center mb-4"
+                            aria-hidden="true"
+                        ></i>
+                        <h4 class="text-xl font-semibold text-center text-green-400 mb-4">
+                            Drag and Drop Files here <br />
+                            -OR-
+                        </h4>
+                        <label
+                            for="files-input"
+                            class="bg-green-400 inline-block py-3 px-8 rounded-lg text-white text-center font font-bold text-2xl"
+                            >Browse Files</label
+                        >
+                        <input type="file" name="files" id="files-input" accept="images/*" multiple="" hidden="" />
                     </div>
-                </form>
+                </div>
 
                 <!-- UPLOADED FILES -->
                 <div class="uploaded-files-section overflow-y-auto">
                     <h2 class="text-4xl font-bold mb-6">Uploaded Files</h2>
                     <div class="uplaoded-files flex flex-col" id="files">
-
                         <div class="file">
-                            <i class="far fa-file-image"></i>
+                            <div class="thumb">
+                                <i class="far fa-file-image" aria-hidden="true"></i>
+                            </div>
                             <div class="file-info">
                                 <div class="flex justify-between">
-                                    <p class="file-name truncate"><span>(490KB)</span> Profile-pic.png </p>
+                                    <p class="file-name truncate"><span>(490KB)</span> Profile-pic.png</p>
                                     <p class="file-status">Completed</p>
                                 </div>
                                 <progress id="file-progress" value="100" max="100">65%</progress>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
