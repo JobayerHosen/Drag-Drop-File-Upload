@@ -37,16 +37,15 @@
 .file .thumb {
   width: 3rem;
   height: 3rem;
-  padding-right: 1rem;
+  margin-right: 1rem;
 }
 .file .far {
-  text-align: center;
   font-size: 3rem;
   color: rgba(177, 65, 221, 0.994);
   max-width: 3rem;
 }
 .file-info {
-  width: calc(100% - 3rem);
+  width: calc(100% - 4rem);
 }
 .file-name {
   font-size: 1rem;
@@ -58,6 +57,9 @@
   text-align: right;
   font-size: 1rem;
   font-weight: bold;
+  color: #c634d3;
+}
+.file-status.completed {
   color: #34d399;
 }
 progress {
