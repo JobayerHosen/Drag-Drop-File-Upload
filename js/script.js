@@ -41,7 +41,7 @@ const handleFiles = function (fileList) {
 /*UPLOADS FILE TO SERVER AND CALLS updateFileProgress FUNCTION 
 ON UPLOAD PROGRESSS AND ONLOAD */
 const uploadFile = function (file, fileId) {
-    const url = "https://jsonplaceholder.typicode.com/posts";
+    const url = "";
     const xhr = new XMLHttpRequest();
     xhr.open("POST", url);
     xhr.setRequestHeader("Content-Type", "maltipart/form-data");
